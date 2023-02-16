@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { Box } from '@mui/system';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import FavouriteShows from './Components/FavouriteShows';
+import Home from './Components/Home';
+import Navbar from './Components/Navbar';
+import ShowDetails from './Components/ShowDetails';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Box>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/show-details/:id' element={<ShowDetails/>}/>
+          <Route path='/fav-shows' element={<FavouriteShows/>}/>
+        </Routes>
+      </Box>
     </div>
   );
 }
