@@ -37,7 +37,7 @@ function ShowDetails() {
             }}
           ></Box>
         </Box>
-        <Stack direction="row" spacing={6} my={6}>
+        <Stack direction={{xs:'column',md:'row'}} spacing={6} my={6}>
           <Box flex="30%">
             <img
               src={show?.image?.original}
@@ -46,7 +46,7 @@ function ShowDetails() {
             />
           </Box>
           <Box flex="70%">
-            <Stack direction="row" spacing={2}>
+            <Stack direction={{xs:'column',md:'row'}} spacing={2}>
               <Stack p={4} spacing={1} sx={{ background: "#000" }}>
                 <Typography variant="h2" color="white" fontWeight="bold">
                   {show?.name}

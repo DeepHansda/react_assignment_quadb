@@ -5,10 +5,10 @@ import ShowsCard from "./ShowsCard";
 import Spinner from "./Spinner/Spinner";
 
 function Home() {
-  const { data,isFetching } = useGetShowsQuery();
+  const { data, isFetching } = useGetShowsQuery();
 
-  if(isFetching){
-    return <Spinner/>
+  if (isFetching) {
+    return <Spinner />;
   }
   return (
     <div>
@@ -16,7 +16,17 @@ function Home() {
         <Box my={15}>
           <Grid container rowGap={4}>
             {data?.map((item, index) => (
-              <Grid item key={index} xl={3}>
+              <Grid
+                item
+                key={index}
+                xs={12}
+                sm={6}
+                md={4}
+                lg={3}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
                 <ShowsCard show={item?.show} />
               </Grid>
             ))}
