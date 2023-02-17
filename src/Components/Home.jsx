@@ -2,10 +2,14 @@ import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 import { useGetShowsQuery } from "../Redux/slices/apiSlice";
 import ShowsCard from "./ShowsCard";
+import Spinner from "./Spinner/Spinner";
 
 function Home() {
-  const { data } = useGetShowsQuery();
+  const { data,isFetching } = useGetShowsQuery();
 
+  if(isFetching){
+    return <Spinner/>
+  }
   return (
     <div>
       <Container>
